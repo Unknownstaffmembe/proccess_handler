@@ -1,4 +1,4 @@
-# A pretty badly designed multithreaded proccess handler
+# A pretty badly designed concurrent proccess handler
 
 # Dependencies
 uqueue: https://github.com/Unknownstaffmembe/queue
