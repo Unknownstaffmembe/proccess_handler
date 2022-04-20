@@ -3,18 +3,25 @@
 
 void proccess(void *arg)
 {
-	printf("Hello, World!\n");
+	int *i;
+
+	i = (int *) arg;
+	printf("%d\n", *i);
+
 	return;
 }
 
 int main()
 {
 	struct proc_handler p;
-	void *ptr;
-	ptr = NULL;
+	int i, n;
+
+	n = 100000;
 	
-	proc_create(&p, &proccess, 10, 4, sizeof(void *));
-	proc_add(&p, &ptr);
+	proc_create(&p, &proccess, 10, 4, sizeof(long int));
+	for (i = 0; i < 4; i++) {
+		proc_add(&p, &n);
+	};
 
 	pthread_exit(0);
 }
